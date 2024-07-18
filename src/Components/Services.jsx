@@ -10,7 +10,7 @@ const ServicesLeft = () => {
             <h1 className={'font-semibold text-xl'}>
                 UI/UX Design
             </h1>
-            <p className={'lg:w-[32rem] leading-8'}>
+            <p className={'lg:w-[32rem] leading-8 md:w-[20rem]'}>
                 Hands-on learning via real-life innovation projects. Save Rs8,210
                 On this Course. Create immersive UI via wireframes. Conduct heuristic
                 evaluation of your UX design.
@@ -46,7 +46,7 @@ const Services = () => {
                 Our Services
             </h1>
 
-            <div className={'flex flex-col items-center lg:flex-row gap-10'}>
+            <div className={'flex flex-col items-center md:flex-row gap-10'}>
                 <ServicesLeft />
                 <img className={'w-[22rem]'} src={hero2} alt=""/>
             </div>
