@@ -13,7 +13,7 @@ module.exports = {
       backgroundImage: {
         'mainBg': "url('src/assets/mainBg.jpeg')",
         'mainBg2': "url('src/assets/mainBg2.jpg')",
-        'mainBg3': "url('src/assets/mainBg3.png')"
+        'mainBg3': "url('./src/assets/mainBg3.png')"
       },
       keyframes: {
         marquee: {
