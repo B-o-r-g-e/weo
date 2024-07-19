@@ -22,7 +22,7 @@ const NavBar = () => {
                 />
             </div>
 
-            <div className={'lg:hidden'}>
+            <div className={'lg:hidden z-40'}>
                 {
                     isOpen && (
                         <div className={''}>
