@@ -1,17 +1,13 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 window.ethereum = undefined;
 const WalletConnect = () => {
     const [account, setAccount] = useState(null);
 
-    {
-        console.log(account)
-    }
-
+    // Function to handle connecting to MetaMask
     const connectMetaMask = async () => {
         // 1. Check if MetaMask is installed
         if (typeof window.ethereum !== 'undefined') {
-            // MetaMask is installed
             try {
                 // 2. Request the user's accounts
                 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -27,6 +23,7 @@ const WalletConnect = () => {
         }
     };
 
+    // Function to handle disconnecting from MetaMask
     const disconnectMetaMask = () => {
         setAccount(null);
     };
@@ -34,26 +31,34 @@ const WalletConnect = () => {
     useEffect(() => {
         // 1. Check if MetaMask is installed
         if (typeof window.ethereum !== 'undefined') {
-            // MetaMask is installed
-            // 2. Listen for account changes
-            window.ethereum.on('accountsChanged', (accounts) => {
+            // 2. Function to handle account changes
+            const handleAccountsChanged = (accounts) => {
                 if (accounts.length > 0) {
-                    // 3. If there are accounts, set the first account
                     setAccount(accounts[0]);
                 } else {
-                    // 4. If no accounts, set account to null
                     setAccount(null);
                 }
-            });
+            };
 
-            // 5. Listen for network changes
-            window.ethereum.on('chainChanged', (chainId) => {
-                // 6. Reload the page on network change
+            // 3. Function to handle chain changes
+            const handleChainChanged = () => {
                 window.location.reload();
-            });
+            };
+
+            // 4. Listen for account changes
+            window.ethereum.on('accountsChanged', handleAccountsChanged);
+            // 5. Listen for network changes
+            window.ethereum.on('chainChanged', handleChainChanged);
+
+            // 6. Cleanup listeners on unmount
+            return () => {
+                if (window.ethereum.removeListener) {
+                    window.ethereum.removeListener('accountsChanged', handleAccountsChanged);
+                    window.ethereum.removeListener('chainChanged', handleChainChanged);
+                }
+            };
         }
     }, []);
-
 
     return (
         <div>
@@ -62,8 +67,6 @@ const WalletConnect = () => {
                     ? <button className={'bg-purple-900 font-bold'} onClick={disconnectMetaMask}>Connected</button>
                     : <button className={'font-bold'} onClick={connectMetaMask}>Connect Wallet</button>
             }
-            {/*<button onClick={connectMetaMask}>Connect MetaMask</button>*/}
-            {/*{account ? <p>Connected: {account}</p> : <p>Not connected</p>}*/}
         </div>
     );
 };
