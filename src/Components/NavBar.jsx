@@ -3,6 +3,7 @@ import { MdArrowOutward } from "react-icons/md";
 import {useState} from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import WalletConnect from "./WalletConnect.jsx";
 
 
 const NavBar = () => {
@@ -71,10 +72,11 @@ const NavBar = () => {
                 </ul>
             </div>
 
-            <button className={'flex items-center justify-center whitespace-nowrap font-bold gap-3 text-sm lg:text-base hover:bg-zinc-800 hover:border-yellow-700'}>
-                CONNECT WALLET
-                {/*<MdArrowOutward/>*/}
-            </button>
+            {/*<button className={'flex items-center justify-center whitespace-nowrap font-bold gap-3 text-sm lg:text-base hover:bg-zinc-800 hover:border-yellow-700'}>*/}
+            {/*    CONNECT WALLET*/}
+            {/*    /!*<MdArrowOutward/>*!/*/}
+            {/*</button>*/}
+            <WalletConnect />
         </div>
 
     )
