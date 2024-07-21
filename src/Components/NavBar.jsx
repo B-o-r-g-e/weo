@@ -51,9 +51,9 @@ const NavBar = () => {
                                     </ul>
                                 </div>
 
-                                <p className={'text-nowrap flex justify-center items-center font-bold gap-3'}>
+                                <p className={'text-nowrap flex justify-center  font-bold gap-2 w-full bg-black py-4 rounded-lg cursor-pointer'}>
                                     Weo3
-                                    <MdArrowOutward/>
+                                    <MdArrowOutward />
                                 </p>
                             </div>
                         </div>
