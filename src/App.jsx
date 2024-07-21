@@ -4,7 +4,6 @@ import Services from "./Components/Services.jsx";
 import SecondDivide from "./Components/SecondDivide.jsx";
 import HappyCustomers from "./Components/HappyCustomers.jsx";
 import Footer from "./Components/Footer.jsx";
-// import Test from "./Components/test.jsx";
 
 const App = () => {
     return (
@@ -15,7 +14,6 @@ const App = () => {
             <SecondDivide />
             <HappyCustomers />
             <Footer />
-            {/*<Test />*/}
         </div>
     )
 }
