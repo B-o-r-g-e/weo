@@ -1,5 +1,5 @@
 import logo from '../assets/logo.png'
-// import { MdArrowOutward } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import {useState} from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -51,11 +51,10 @@ const NavBar = () => {
                                     </ul>
                                 </div>
 
-                                {/*<button className={'text-nowrap flex justify-center items-center font-bold gap-3'}>*/}
-                                {/*    CONNECT WALLET*/}
-                                {/*    <MdArrowOutward/>*/}
-                                {/*</button>*/}
-                                <WalletConnect />
+                                <p className={'text-nowrap flex justify-center items-center font-bold gap-3'}>
+                                    Weo3
+                                    <MdArrowOutward/>
+                                </p>
                             </div>
                         </div>
                     )
