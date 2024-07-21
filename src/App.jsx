@@ -4,6 +4,7 @@ import Services from "./Components/Services.jsx";
 import SecondDivide from "./Components/SecondDivide.jsx";
 import HappyCustomers from "./Components/HappyCustomers.jsx";
 import Footer from "./Components/Footer.jsx";
+import {Copyright} from "./Components/Copyright.jsx";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <SecondDivide />
             <HappyCustomers />
             <Footer />
+            <Copyright />
         </div>
     )
 }
