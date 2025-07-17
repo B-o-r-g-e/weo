@@ -4,7 +4,7 @@ import TopHero from "./TopHero.jsx";
 
 const Hero = () => {
     return (
-        <div className={'w-5/6 flex flex-col lg:flex-row lg:gap-28 md:items-center lg:items-start justify-center lg:justify-start mt-11 md:mt-20 lg:-mt-14'}>
+        <div className={'w-5/6 flex flex-col lg:flex-row lg:gap-28 md:items-center lg:items-start justify-center lg:justify-center mt-11 md:mt-20 lg:-mt-14'}>
             <div className={'flex flex-col md:flex-row lg:flex-col md:justify-center lg:justify-start items-center gap-6 lg:gap-10 mt-5 lg:items-start lg:pt-10'}>
                 <TopHero count={'240+'} underText={'PARTNERS'} />
                 <LeftHero count={'92%'} underText={'FASTER TECHNOLOGY'} />
